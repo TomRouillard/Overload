@@ -4,9 +4,9 @@ Overload
 Overload is a loading overlay for the game League of Legends, aimed to replace current game loader with a more useful one.
 It has enhanced informations as well as more appealing graphics, animated art and user interactions, things that the current loader lacks.
 
-What is it doing?
+What does it do?
 -------------
-Overload start a daemon looking for the starting of league of legends process on your computer. Once the game is launched, it will quickly create a window with a new loader on the top of the  game and will close it once the loading is finished and the game start. This mechanism is called an overlay, and is commonly used to enhance a game experience.
+Overload start a daemon looking for the starting of league of legends process on your computer. Once the game is launched, it will quickly create a window with a new loader on top of the  game and will close it once the loading is finished and the game start. This mechanism is called an overlay, and is commonly used to enhance a game experience.
 
 **League of legends Loading screen:**  
 ![Old loader](http://s14.postimg.org/db3vo7h81/old_Loader.png "Old loader")
@@ -23,7 +23,7 @@ Overload start a daemon looking for the starting of league of legends process on
 
 How does it do it?
 -------------
-As stated above, it's an overlay window, we just create our new loader on the top of the old one.
+As stated above, it's an overlay window, we just create our new loader on top of the old one.
 
 ![Overlay](http://s9.postimg.org/rrw8nj4xr/overlay.png "Overlay")
 
