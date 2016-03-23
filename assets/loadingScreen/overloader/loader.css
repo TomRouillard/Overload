@@ -1,0 +1,388 @@
+html {
+    height: 100%;
+    box-shadow: inset 0 0 120px 20px black;
+}
+body{
+    overflow: hidden;
+    /*background: linear-gradient(#690E0E, #0E2376); */
+    background: black;
+    font-family: arial,sans-serif;
+    /*background-image: url("../commons/images/wallpeper.jpg");*/
+    background-size: 100%;
+    height: 100%;
+    margin: 0;
+    filter: blur(5px);
+    /*-webkit-filter: blur(5px);*/
+}
+.team{
+    margin-left: 6%;
+    margin-right: 6%;
+    height: 45%;
+    margin-top: 0%;
+    position: relative;
+    margin-bottom: 0;
+}
+#blue {
+    margin-top: 5%;
+}
+#red {
+    margin-bottom: 5%;
+}
+
+
+.player {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: calc(21% - 4px);
+    /*transform: skewX(-8deg);*/
+    /*max-width: 300px;*/
+    margin-right: 15px;
+}
+.champion {
+    height: 100%;
+    position: relative;
+    background-color: #070707;
+    width: 100%;
+    -webkit-clip-path: polygon( 25% 0, 100% 0, 75% 100%, 0 100%);
+    overflow: hidden;
+}
+#red .champion {
+
+    -webkit-animation-name: createDown;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+}
+#blue .champion{
+    -webkit-animation-name: createUp;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+}
+.imgChampion{
+    height: 100%;
+    width: 100%;
+    background-color: #070707;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.additionalInfos{
+   -webkit-animation: slidedown;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+    margin-left: 5%;
+    font-size: 20px;
+    margin-top: 40px;
+    color: white;
+    text-align: center;
+}
+.additionalInfos label{
+    font-size: 12px
+}
+.divisionText{
+    background: #E95858 ;
+}
+#blue .divisionText{
+    background: #5E5EE8;
+}
+.division{
+   -webkit-animation: slidedown;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+    margin-left: 20%;
+    color: white;
+    text-align: center;
+}
+.division img{
+    margin-left: 0%;
+    width: 130px;
+}
+.playerInfo{
+    position: absolute;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background:rgba(11,11,11,0.8);
+   -webkit-animation: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+}
+.champVideo{
+    height: 100%;width: auto;
+  /*width: 100%;*/
+    position:absolute;
+    top:0;
+    opacity: 0;
+    left: 0px;
+ /*   -webkit-animation: animatedBackground;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;*/
+}
+
+
+.rotateVideo {
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+    -webkit-clip-path: polygon(100% 100%, 25% 100%, 0% 0, 75% 0 );
+}
+/*             #red .imgChampion{
+    -webkit-animation-name: create;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    -webkit-clip-path: polygon( 0 0, 75% 0, 100% 100%, 25% 100%);
+}
+*/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes createDown {
+    0% {
+        -webkit-clip-path: polygon( 25% 0, 100% 0, 100% 0%, 25% 0%);
+    }
+    100% {
+        -webkit-clip-path: polygon( 25% 0, 100% 0, 75% 100%, 0 100%);
+    }
+}
+@-webkit-keyframes createUp {
+    0% {
+        -webkit-clip-path: polygon( 0% 100%, 75% 100%, 75% 100%, 0% 100%);
+    }
+    100% {
+        -webkit-clip-path: polygon( 25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+}
+@-webkit-keyframes slideright {
+    from {opacity: 0;transform: translate(-10px, 0px);}
+    to {opacity: 1;}
+}
+@-webkit-keyframes slideleft {
+    from {opacity: 0;transform: translate(10px, 0px);}
+    to {opacity: 1;}
+}
+@-webkit-keyframes slideleftVideo {
+    from {
+        opacity: 0;transform: translate(40px, 0px);
+        -webkit-clip-path: polygon( 25% 0, 91% 0, 64% 100%, 0 100%);
+    }
+    to {opacity: 1;}
+}
+@-webkit-@keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+@-webkit-keyframes slidedown {
+    from {opacity: 0;transform: translate(0px, -10px);}
+    to {opacity: 1;}
+}
+li {
+    display: inline;
+}
+ul {
+    padding: none;
+}
+.summoners {
+    padding-left: 5%;
+}
+
+.summonerD{
+    display: inline-block;
+    width: 37px;
+    -webkit-animation: slideleft;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+    height: 37px;
+    margin: 5px;
+    background-size: 100%;
+}
+
+.summonerF{
+    display: inline-block;
+    width: 37px;
+    -webkit-animation: slideleft;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+    height: 37px;
+    margin: 5px;
+    background-size: 100%;
+
+}
+
+.Flash {
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 115, 0.75);
+}
+.Ignite {
+    box-shadow: 0px 0px 20px 0px rgba(255, 155, 115, 0.75);
+}
+.Exhaust {
+    box-shadow: 0px 0px 20px 0px #F9F78E;
+}
+.Cleanse {
+    box-shadow: 0px 0px 20px 0px #69EBE3;
+}
+.Clairvoyance {
+    box-shadow: 0px 0px 20px 0px #596BF2;
+}
+.Ghost {
+    box-shadow: 0px 0px 20px 0px #5AA3EE;
+}
+.Heal {
+    box-shadow: 0px 0px 20px 0px #7BF42B;
+}
+.Revive {
+    box-shadow: 0px 0px 20px 0px #4FE33B;
+}
+.Smite {
+    box-shadow: 0px 0px 20px 0px #FFC938;
+}
+.Teleport {
+    box-shadow: 0px 0px 20px 0px #E62FED;
+}
+.Clarity {
+    box-shadow: 0px 0px 20px 0px #616BF1;
+}
+.Garrison {
+    box-shadow: 0px 0px 20px 0px #EC3434;
+}
+.Barrier {
+    box-shadow: 0px 0px 20px 0px #F7F441;
+}
+.To_The_King {
+    box-shadow: 0px 0px 20px 0px #BEBD99;
+}
+.Porro_Toss {
+    box-shadow: 0px 0px 20px 0px #8EA2F9;
+}
+.Mark {
+    box-shadow: 0px 0px 20px 0px #8EB9F9;
+}
+
+
+.playerMask{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 45%, rgba(0, 0, 0, 0.95) 90%, rgba(0, 0, 0, 1) 100%)
+}
+
+.gold {
+}
+.diamond img{
+    position: relative;
+    top: -20px;
+    width: 106%;
+    margin-left: -6%;
+
+}
+.playerFooter{
+    position: relative;
+    bottom: 27%;
+    height: 20%;
+    width: 100%;
+    z-index: 3;
+    width: 75%;
+    -webkit-animation: slidedown;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+    /*z-index: 10;*/
+    margin-left: 4%;
+}
+
+.championName {
+    color: #7889E2;
+    font-size: 22px;
+    text-shadow: 2px 2px 2px #000000;
+    text-align: center;
+}
+
+.name {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-bottom: 6px;
+    vertical-align: middle;
+}
+ul {
+    list-style: none;
+}
+
+.blinkMask{
+    position: absolute;
+    background-image:  linear-gradient(to top, rgba(0,50,180,0) 70%, rgba(255,255,255,1)100%);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+.blink {
+  -webkit-animation: blinker 0.6s;
+}
+@-webkit-keyframes blinker {
+  0% {opacity: 0.0;}
+  50% {opacity: 0.6;}
+  100% {opacity: 0.0;}
+}
+
+.loadingbar{
+    position: relative;
+    height: 100%;
+    opacity: 1;
+    -webkit-clip-path:  polygon( 99% 0, 100% 0, 75% 100%, 74% 100%);
+}
+.maskLoadingbar{
+    position: relative;
+    top: -0%;
+    height: 100%;
+    opacity: 1;
+    -webkit-clip-path:  polygon( 0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+#red .loadingbar {
+    background-image:  linear-gradient(to top, rgba(180,50,0,0.5) 0%, rgba(255,110,80,0.8)100%);
+    /*-webkit-clip-path:  polygon( 98% 0, 100% 0, 75% 100%, 73% 100%);*/
+
+    /*-webkit-clip-path: polygon( 73% 0, 75% 0, 100% 100%, 98% 100%);*/
+}
+.team .loadingbar {
+    background-image:  linear-gradient(to top, rgba(30,50,180,0.5) 0%, rgba(100,140,255,0.8)100%);
+
+}
+
+.icon{
+    display: inline-block;
+    width: 25%;
+    height: 80%;
+    max-width: 70px;
+    max-height: 70px;
+    margin-left: 0%;    background-image: url("../commons/images/profileicons/profileicon0.png");
+    height:46px;
+    width:46px;
+    border: 1px solid #828282
+}
+.percent{
+    display: inline-block;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 14%;
+    margin-bottom: 40px;
+    -webkit-animation: slideright;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-play-state: running;
+}

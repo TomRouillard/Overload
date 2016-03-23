@@ -1,0 +1,11 @@
+{
+    version: "2.7",
+    removed: [
+        "/sites/site1/champions/images/splash_orianna.png"
+    ],
+    added: [
+        "/sites/site1/champions/images/new_champ.png",
+        "/sites/site1/champions/champions.json",
+        "/sites/site1/champions/images/splash_orianna.png"
+    ]
+}
