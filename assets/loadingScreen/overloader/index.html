@@ -4,11 +4,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="Content-Language" content="fr" />
 
-        <link rel="stylesheet" href="loader.css" />
+        <link rel="stylesheet" href="../commons/css/loader.css" />
     <body>
-    <!-- <audio autoplay loop id="musicplayer">
-      <source src="C:\Riot Games\League of Legends\RADS\projects\lol_air_client\releases\0.0.1.158\deploy\assets\sounds\ambient\ChmpSlct_Tutorial.mp3" type="audio/mp3">
-    </audio> -->
+    <audio autoplay loop id="musicplayer">
+      <source src="" type="audio/mp3">
+    </audio>
         <ul class="team" id="red">
 
         </ul>
@@ -18,20 +18,58 @@
 <script src="../commons/js/jquery-2.1.1.min.js"></script>
 <script src="../commons/js/champions.js"></script>
 <script src="../commons/js/summonerspells.js"></script>
-<script src="../commons/js/summonericons.js"></script>
+<script src="../commons/js/summonerIcons.js"></script>
 <script type="text/javascript">
-
-    /*window.onload = function() {
+    var ENV = "TEST";
+    var currentDir = "C:/Riot Games/League of Legends/RADS/projects/lol_air_client/releases/0.0.1.201/deploy/assets/";
+    window.onload = function() {
         var backgroundAudio=document.getElementById("musicplayer");
+        backgroundAudio.src = currentDir + "sounds/ambient/ChmpSlct_Tutorial.mp3"
         backgroundAudio.volume=0.2;
-    }*/
+    }
     var champs = [];
-    // $('#teamRed .player').addClass('animated fadeInLeft');
-    // $('#teamBlue .player').addClass('animated fadeInRight');
     function Team(color) {
         this.color = color;
         this.players = [];
     }
+    if (ENV == "TEST") {
+        function getRandChampID() {
+            var key = String(Math.floor(Math.random() * 130) + 1);
+            if ( ! (key in champions) ) {
+                key = getRandChampID();
+            }
+            return key;
+        }
+        function getRandIconID() {
+            var key = String(Math.floor(Math.random() * 800) + 1);
+            if ( ! (key in summonerIcons) ) {
+                key = getRandIconID();
+            }
+            return key;
+        }
+        var respTest = {"gameId":2098462209,"mapId":11,"gameMode":"CLASSIC","gameType":"MATCHED_GAME","gameQueueConfigId":4,"participants":[
+        {"teamId":100,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Sidesprang","bot":false,"summonerId":22338565},
+        {"teamId":100,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"KingWorsa","bot":false,"summonerId":34857282},
+        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Enton","bot":false,"summonerId":39484945},
+        {"teamId":100,"spell1Id":12,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Bones to Papayas","bot":false,"summonerId":43672112},
+        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Wild Porygon","bot":false,"summonerId":41527558},
+        {"teamId":200,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"The Wang Carry","bot":false,"summonerId":24560332},
+        {"teamId":200,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Fungar","bot":false,"summonerId":25595670},
+        {"teamId":200,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"yung baloo","bot":false,"summonerId":22025113},
+        {"teamId":200,"spell1Id":4,"spell2Id":3,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Alamolo","bot":false,"summonerId":19402186},
+        {"teamId":200,"spell1Id":4,"spell2Id":12,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"DG Basko","bot":false,"summonerId":22385395}]}
+            // var champions = ['Nami', 'Draven', 'Forecast_Janna', 'Pulsefire_Ezreal', 'Aatrox']
+
+        getSynchronizedVariant = function(variable) {
+            var result = {
+                "imageDirectory": currentDir + "images/champions/",
+                "gameInfo": JSON.stringify(respTest)
+            };
+
+            return result[variable];
+        }
+    }
+
     Team.prototype.addPlayer = function(player) {
         this.players.push(player);
     }
@@ -208,31 +246,10 @@
     function init(){
         // var server = "EUW1";
         // var idPlayer = "28858597";
-        // var key = "fc637cf1-2f0c-4011-8221-73399a14ed7b";
-        // $.ajax({
-        //     type: "GET",
-        //     dataType: "json",
-        //     // https://euw.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/EUW1/vivacious jon?api_key=fc637cf1-2f0c-4011-8221-73399a14ed7b
-        //     //http://95.85.46.198/api/game/EUW1/20138005
-        //     url: "http://95.85.46.198/api/game/EUW1/" + idPlayer + "",
-        //     success: function (data) {
-        //         test(data);
-        //     },
-        //     error: function() {
-        //         console.log('error dl infos', tryAjx);
-        //         if (tryAjx<5) {
-        //             setTimeout(function() {
-        //                 tryAjx++;
-        //                 init();
-        //             }, 1000)
-        //         }
-        //     }
-        // })
 
-        // test(respTest);
         teams['red'] = new Team("red");
         teams['blue'] = new Team("blue");
-        function test(data) {
+        function run(data) {
             var nbPlayers = data.participants.length;
             var index = 0;
             var offset = [500, 680, 680, 520, 520, 400, 400, 260, 260, 120, 120, 0, 0];
@@ -246,23 +263,9 @@
                     players[color].push(player);
                     teams[color].addPlayer(player);
                     player.container.css({'left':  (offset[nbPlayers] + 270 * player.index) +'px'})
-                }, i*200);
+                }, i*50);
             };
 
-            // setTimeout(function() {
-            //     (function defineInfo(id){
-            //         setTimeout(function() {
-            //             players["red"][id].realPlayer(champions[id], null, {name: 'Vivacious Jon', division:'Diamond 1', winrate: 80, games: 420});
-            //             players["red"][id].definePercent(100);
-            //             players["blue"][id].realPlayer(champions[id], null, {name: 'Vivacious Jon', division:'Diamond 1', winrate: 80, games: 420});
-            //             players["blue"][id].definePercent(100);
-            //             id ++;
-            //             if (id < 5) {
-            //                 defineInfo(id);
-            //             }
-            //         }, 100)
-            //     })(0);
-            // }, 2500);
             function checkEmpty(obj) {
                 for (var key in obj) {
                     if (hasOwnProperty.call(obj, key)) return false;
@@ -274,15 +277,12 @@
                 for (var i = data.participants.length - 1; i >= 0; i--) {
                     var participant = data.participants[i];
                     var color = participant.teamId == 100 ? "blue" : "red";
-                    console.log( participant);
-                    console.log( !checkEmpty(participant.infos) );
                     var infos =  {
                         name: participant.summonerName,
                         division:  !checkEmpty(participant.infos) ? participant.infos.tier.toLowerCase() +'_'+ participant.infos.entries[0].division.toLowerCase() : '',
                         winrate:   !checkEmpty(participant.infos) ? parseInt(100 * ((participant.infos.entries[0].wins) / (participant.infos.entries[0].losses + participant.infos.entries[0].wins))): '',
                         games:     !checkEmpty(participant.infos) ? parseInt(participant.infos.entries[0].wins) + parseInt(participant.infos.entries[0].losses): ''
                     }
-                    console.log(players);
                     players[color][indexP[color]].realPlayer( participant.championId,
                         null,
                         [ participant.spell1Id, participant.spell2Id ],
@@ -290,26 +290,13 @@
                         participant.profileIconId
                     );
                     players[color][indexP[color]].definePercent(100);
-                    // getChamps();
                     indexP[color]++;
                 }
 
             }, 2500);
         }
-        test(JSON.parse(getSynchronizedVariant("gameInfo")));
+        run(JSON.parse(getSynchronizedVariant("gameInfo")));
     }
-var respTest = {"gameId":2098462209,"mapId":11,"gameMode":"CLASSIC","gameType":"MATCHED_GAME","gameQueueConfigId":4,"participants":[
-{"teamId":100,"spell1Id":14,"spell2Id":4,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":539,"summonerName":"Sidesprang","bot":false,"summonerId":22338565},
-{"teamId":100,"spell1Id":4,"spell2Id":11,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":502,"summonerName":"KingWorsa","bot":false,"summonerId":34857282},
-{"teamId":100,"spell1Id":7,"spell2Id":4,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":18,"summonerName":"Enton","bot":false,"summonerId":39484945},
-{"teamId":100,"spell1Id":12,"spell2Id":4,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":18,"summonerName":"Bones to Papayas","bot":false,"summonerId":43672112},
-{"teamId":100,"spell1Id":7,"spell2Id":4,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":539,"summonerName":"Wild Porygon","bot":false,"summonerId":41527558},
-{"teamId":200,"spell1Id":4,"spell2Id":11,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":684,"summonerName":"The Wang Carry","bot":false,"summonerId":24560332},
-{"teamId":200,"spell1Id":7,"spell2Id":4,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":518,"summonerName":"Fungar","bot":false,"summonerId":25595670},
-{"teamId":200,"spell1Id":14,"spell2Id":4,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":502,"summonerName":"yung baloo","bot":false,"summonerId":22025113},
-{"teamId":200,"spell1Id":4,"spell2Id":3,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":544,"summonerName":"Alamolo","bot":false,"summonerId":19402186},
-{"teamId":200,"spell1Id":4,"spell2Id":12,"championId":Math.floor(Math.random() * 113) + 1,"profileIconId":563,"summonerName":"DG Basko","bot":false,"summonerId":22385395}]}
-    // var champions = ['Nami', 'Draven', 'Forecast_Janna', 'Pulsefire_Ezreal', 'Aatrox']
 
     init();
     Player.prototype.readyAnimation = function() {
