@@ -107,7 +107,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '350'
     ]
   },
   "114": {
@@ -116,7 +116,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '330'
     ]
   },
   "115": {
@@ -125,7 +125,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '370'
     ]
   },
   "119": {
@@ -134,7 +134,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '100'
     ]
   },
   "110": {
@@ -143,7 +143,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '400'
     ]
   },
   "111": {
@@ -152,7 +152,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '360'
     ]
   },
   "126": {
@@ -161,7 +161,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '380'
     ]
   },
   "432": {
@@ -197,7 +197,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '380'
     ]
   },
   "122": {
@@ -206,7 +206,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '280'
     ]
   },
   "120": {
@@ -215,7 +215,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '350'
     ]
   },
   "236": {
@@ -278,7 +278,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '350'
     ]
   },
   "131": {
@@ -342,7 +342,7 @@ window.champions ={
         "support"
       ],
     "skinsOffset": [
-      '390'
+      '290'
     ]
   },
   "1" :{
@@ -377,7 +377,7 @@ window.champions ={
         "support"
       ],
     "skinsOffset": [
-      '420'
+      '430'
     ]
   },
   "51" :{
@@ -431,7 +431,7 @@ window.champions ={
     "roles" : [ "jungler"
       ],
     "skinsOffset": [
-      '420'
+      '320'
     ]
   },
   "81" :{
@@ -439,7 +439,7 @@ window.champions ={
     "roles" : [ "marksmen"
       ],
     "skinsOffset": [
-      '300'
+      '320'
     ]
   },
   "9" :{
@@ -449,7 +449,7 @@ window.champions ={
         "support"
       ],
     "skinsOffset": [
-      '370'
+      '290'
     ]
   },
   "105" :{
@@ -459,7 +459,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '450'
+      '460'
     ]
   },
   "3" :{
@@ -484,7 +484,7 @@ window.champions ={
     "roles" : [ "top"
       ],
     "skinsOffset": [
-      '400'
+      '410'
     ]
   },
   "79" :{
@@ -502,7 +502,7 @@ window.champions ={
     "roles" : [ "marksmen"
       ],
     "skinsOffset": [
-      '340'
+      '350'
     ]
   },
   "74" :{
@@ -637,7 +637,7 @@ window.champions ={
     "roles" : [ "support"
       ],
     "skinsOffset": [
-      '360'
+      '380'
     ]
   },
   "99" :{
@@ -681,7 +681,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '400'
+      '420'
     ]
   },
   "21" :{
@@ -689,7 +689,7 @@ window.champions ={
     "roles" : [ "marksmen"
       ],
     "skinsOffset": [
-      '400'
+      '420'
     ]
   },
   "82" :{
@@ -715,7 +715,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '390'
+      '420'
     ]
   },
   "75" :{
@@ -778,7 +778,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '360'
+      '370'
     ]
   },
   "78" :{
@@ -787,7 +787,7 @@ window.champions ={
         "jungler"
       ],
     "skinsOffset": [
-      '420'
+      '370'
     ]
   },
   "33" :{
@@ -795,7 +795,7 @@ window.champions ={
     "roles" : [ "jungler"
       ],
     "skinsOffset": [
-      '400'
+      '370'
     ]
   },
   "58" :{
@@ -900,7 +900,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '360'
+      '370'
     ]
   },
   "37" :{
@@ -941,7 +941,7 @@ window.champions ={
     "roles" : [ "support"
       ],
     "skinsOffset": [
-      '380'
+      '390'
     ]
   },
   "17" :{
@@ -974,7 +974,7 @@ window.champions ={
     "roles" : [ "top"
       ],
     "skinsOffset": [
-      '360'
+      '340'
     ]
   },
   "4" :{
@@ -982,7 +982,7 @@ window.champions ={
     "roles" : [ "mid"
       ],
     "skinsOffset": [
-      '360'
+      '367'
     ]
   },
   "29" :{
@@ -990,7 +990,7 @@ window.champions ={
     "roles" : [ "marksmen"
       ],
     "skinsOffset": [
-      '240'
+      '260'
     ]
   },
   "77" :{
@@ -1024,7 +1024,7 @@ window.champions ={
     "roles" : [ "mid"
       ],
     "skinsOffset": [
-      '360'
+      '350'
     ]
   },
   "112" :{
@@ -1086,7 +1086,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '410'
+      '390'
     ]
   },
   "83" :{
@@ -1095,7 +1095,7 @@ window.champions ={
         "jungler"
       ],
     "skinsOffset": [
-      '360'
+      '370'
     ]
   },
   "26" :{
