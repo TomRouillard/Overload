@@ -39,10 +39,12 @@ std::string Overload::getDefaultLeagueImageDirectory()
 std::string Overload::retrieveCurrentGameInfo()
 {
 	UserInfo currentUser = retrieveCurrentUser();
-	return _serverManager.retrieveGameInfo(currentUser._id);
+	UserInfo fooUser;
+	fooUser._id = 43699021;
+	return _serverManager.retrieveGameInfo(fooUser._id);
 }
 
-//Reach usefull values inside LeagueOfLegends files.
+//Reach useful values inside LeagueOfLegends files.
 void Overload::loadUsersData()
 {
 	std::vector<std::string> userNames = utils::FileUtils::getFilesInDirectory(_defaultLeagueDirectory);
@@ -56,6 +58,7 @@ void Overload::loadUsersData()
 			loadUserName(userName);
 		}
 	}
+	LOG(INFO) << "User data loaded.";
 }
 
 void Overload::loadUserName(std::string name)

@@ -229,7 +229,7 @@ namespace utils
 				{
 					if (processName == getProcessName(aProcesses[i]))
 					{
-						std::cout << "Found process" << std::endl;
+						LOG(INFO) << "Process" << processName << "found.";
 						processFound = true;
 					}
 				}

@@ -42,6 +42,7 @@ using namespace web::http::client;
 #define REQUIRE_IO_THREAD()   ASSERT(CefCurrentlyOn(TID_IO));
 #define REQUIRE_FILE_THREAD() ASSERT(CefCurrentlyOn(TID_FILE));
 
+#include "easylogging++.h"
 #include "utils.h"
 
 // TODO: reference additional headers your program requires here

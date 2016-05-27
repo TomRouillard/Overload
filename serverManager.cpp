@@ -7,7 +7,7 @@ void ServerManager::initializeServerInfo(std::string serverAddress, int serverPo
 	builder.set_host(utils::StringUtils::stringToWString(serverAddress));
 	builder.set_port(serverPort);
 	_uri = builder.to_uri();
-	std::cout << "URI:" << utils::StringUtils::wStringToString(_uri.to_string()) << std::endl;
+	LOG(INFO) << "Server info initialized with URI: " << utils::StringUtils::wStringToString(_uri.to_string());
 }
 
 void ServerManager::loadFiles(const std::vector<std::string>& files)
@@ -43,11 +43,9 @@ UserInfo ServerManager::retrieveUserInfo(std::string userName, std::string serve
 		}
 		catch (const web::http::http_exception &e)
 		{
-			std::wcout << L"Error while sending an http request... " << e.what() << std::endl;
+			LOG(ERROR) << "Error while sending an http request... " << e.what();
 		}
 	}).wait();
-
-	//userInfo._id = 20251384	
 	return userInfo;
 }
 
@@ -66,7 +64,7 @@ std::string ServerManager::retrieveGameInfo(const UserId& userId, std::string se
 		}
 		catch (const web::http::http_exception &e)
 		{
-			std::wcout << L"Error while sending an http request... " << e.what() << std::endl;
+			LOG(ERROR) << L"Error while sending an http request... " << e.what();
 		}
 	}).wait();
 	return gameInfo;
