@@ -7,7 +7,7 @@ body{
     /*background: linear-gradient(#690E0E, #0E2376); */
     background: black;
     font-family: arial,sans-serif;
-    /*background-image: url("../commons/images/wallpeper.jpg");*/
+    background-image: url("../images/wallpeper.jpg");
     background-size: 100%;
     height: 100%;
     margin: 0;
@@ -39,6 +39,12 @@ body{
     /*max-width: 300px;*/
     margin-right: 15px;
 }
+.player:hover .playerFooter {
+    display: none;
+}
+.player:hover .playerInfo {
+    display: block;
+}
 .champion {
     height: 100%;
     position: relative;
@@ -69,7 +75,7 @@ body{
 }
 .additionalInfos{
    -webkit-animation: slidedown;
-    -webkit-animation-duration: 0.2s;
+    -webkit-animation-duration: 0.3s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     margin-left: 5%;
@@ -89,7 +95,7 @@ body{
 }
 .division{
    -webkit-animation: slidedown;
-    -webkit-animation-duration: 0.2s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     margin-left: 20%;
@@ -108,7 +114,7 @@ body{
     height: 100%;
     background:rgba(11,11,11,0.8);
    -webkit-animation: fadeIn;
-    -webkit-animation-duration: 0.5s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
 }
@@ -202,7 +208,7 @@ ul {
     display: inline-block;
     width: 37px;
     -webkit-animation: slideleft;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     height: 37px;
@@ -214,7 +220,7 @@ ul {
     display: inline-block;
     width: 37px;
     -webkit-animation: slideleft;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     height: 37px;
@@ -297,7 +303,7 @@ ul {
     z-index: 3;
     width: 75%;
     -webkit-animation: slidedown;
-    -webkit-animation-duration: 0.2s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     /*z-index: 10;*/
@@ -330,7 +336,7 @@ ul {
     opacity: 0;
 }
 .blink {
-  -webkit-animation: blinker 0.6s;
+  -webkit-animation: blinker 0.4s;
 }
 @-webkit-keyframes blinker {
   0% {opacity: 0.0;}
@@ -352,13 +358,13 @@ ul {
     -webkit-clip-path:  polygon( 0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 #red .loadingbar {
-    background-image:  linear-gradient(to top, rgba(180,50,0,0.5) 0%, rgba(255,110,80,0.8)100%);
+    background-image:  linear-gradient(to top, rgba(180,50,0,0.3) 0%, rgba(255,110,80,0.4)100%);
     /*-webkit-clip-path:  polygon( 98% 0, 100% 0, 75% 100%, 73% 100%);*/
 
     /*-webkit-clip-path: polygon( 73% 0, 75% 0, 100% 100%, 98% 100%);*/
 }
 .team .loadingbar {
-    background-image:  linear-gradient(to top, rgba(30,50,180,0.5) 0%, rgba(100,140,255,0.8)100%);
+    background-image:  linear-gradient(to top, rgba(30,50,180,0.3) 0%, rgba(100,140,255,0.4)100%);
 
 }
 
@@ -368,7 +374,7 @@ ul {
     height: 80%;
     max-width: 70px;
     max-height: 70px;
-    margin-left: 0%;    background-image: url("../commons/images/profileicons/profileicon0.png");
+    margin-left: 0%;    background-image: url("../images/profileicons/profileicon0.png");
     height:46px;
     width:46px;
     border: 1px solid #828282
@@ -382,7 +388,7 @@ ul {
     margin-left: 14%;
     margin-bottom: 40px;
     -webkit-animation: slideright;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
 }
