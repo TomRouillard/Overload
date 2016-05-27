@@ -2,6 +2,7 @@
 #include "webview.h"
 #include "serverManager.h"
 #include "overload.h"
+INITIALIZE_EASYLOGGINGPP
 
 int _tmain(int argc, _TCHAR* argv[])
 {
