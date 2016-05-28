@@ -39,9 +39,7 @@ std::string Overload::getDefaultLeagueImageDirectory()
 std::string Overload::retrieveCurrentGameInfo()
 {
 	UserInfo currentUser = retrieveCurrentUser();
-	UserInfo fooUser;
-	fooUser._id = 19370132;
-	return _serverManager.retrieveGameInfo(fooUser._id);
+	return _serverManager.retrieveGameInfo(currentUser._id);
 }
 
 //Reach useful values inside LeagueOfLegends files.
