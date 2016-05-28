@@ -260,7 +260,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '350'
     ]
   },
   "268": {
@@ -1122,7 +1122,7 @@ window.champions ={
         "mid"
     ],
     "skinsOffset": [
-      '300'
+      '420'
     ]
   },
   "420" :{
