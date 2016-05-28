@@ -331,8 +331,9 @@
         }
         run(JSON.parse(getSynchronizedVariant("gameInfo")));
     }
-
-    init();
+    setTimeout(function() {
+        init();
+    }, 1000)
     Player.prototype.readyAnimation = function() {
         this.blinkMask.addClass('blink');
     }
