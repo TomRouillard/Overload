@@ -7,7 +7,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '400'
     ]
   },
  "154": {
@@ -25,7 +25,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '400'
    ]
  },
  "150": {
@@ -34,7 +34,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '430'
    ]
  },
  "201": {
@@ -43,7 +43,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '410'
    ]
  },
  "161": {
@@ -62,7 +62,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '320'
    ]
  },
  "412": {
@@ -71,7 +71,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '310'
    ]
  },
  "222": {
@@ -98,7 +98,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '320'
    ]
  },
   "117": {
@@ -116,7 +116,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '330'
+      '340'
     ]
   },
   "115": {
@@ -125,7 +125,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '370'
+      '380'
     ]
   },
   "119": {
@@ -134,7 +134,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '100'
+      '57'
     ]
   },
   "110": {
@@ -152,7 +152,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '360'
+      '370'
     ]
   },
   "126": {
@@ -161,7 +161,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '380'
+      '390'
     ]
   },
   "432": {
@@ -179,7 +179,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '370'
     ]
   },
   "127": {
@@ -188,7 +188,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '320'
     ]
   },
   "121": {
@@ -215,7 +215,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '350'
+      '360'
     ]
   },
   "236": {
@@ -224,7 +224,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '400'
     ]
   },
   "238": {
@@ -269,7 +269,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '360'
     ]
   },
   "60": {
@@ -278,7 +278,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '350'
+      '380'
     ]
   },
   "131": {
@@ -287,7 +287,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '370'
     ]
   },
   "266": {
@@ -484,7 +484,7 @@ window.champions ={
     "roles" : [ "top"
       ],
     "skinsOffset": [
-      '410'
+      '420'
     ]
   },
   "79" :{
@@ -538,7 +538,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '360'
+      '370'
     ]
   },
   "24" :{
@@ -637,7 +637,7 @@ window.champions ={
     "roles" : [ "support"
       ],
     "skinsOffset": [
-      '380'
+      '390'
     ]
   },
   "99" :{
@@ -795,7 +795,7 @@ window.champions ={
     "roles" : [ "jungler"
       ],
     "skinsOffset": [
-      '370'
+      '360'
     ]
   },
   "58" :{
@@ -847,7 +847,7 @@ window.champions ={
       "top"
       ],
     "skinsOffset": [
-      '360'
+      '237'
     ]
   },
   "98" :{
@@ -891,7 +891,7 @@ window.champions ={
     "roles" : [ "marksmen"
       ],
     "skinsOffset": [
-      '350'
+      '340'
     ]
   },
   "72" :{
@@ -925,7 +925,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '380'
+      '390'
     ]
   },
   "91" :{
@@ -974,7 +974,7 @@ window.champions ={
     "roles" : [ "top"
       ],
     "skinsOffset": [
-      '340'
+      '360'
     ]
   },
   "4" :{
@@ -1050,7 +1050,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '360'
+      '370'
     ]
   },
   "19" :{
@@ -1106,5 +1106,41 @@ window.champions ={
     "skinsOffset": [
       '280'
     ]
-  }
+  },
+  "223" :{
+    "name" : "Tahm Kench",
+    "roles" : [ "support",
+        "mid"
+    ],
+    "skinsOffset": [
+      '300'
+    ]
+  },
+  "420" :{
+    "name" : "Illaoi",
+    "roles" : [ "support",
+        "mid"
+    ],
+    "skinsOffset": [
+      '300'
+    ]
+  },
+  "136" :{
+    "name" : "Aurelion Sol",
+    "roles" : [ "support",
+        "mid"
+    ],
+    "skinsOffset": [
+      '300'
+    ]
+  },
+  "163" :{
+    "name" : "Taliyah",
+    "roles" : [ "support",
+        "mid"
+    ],
+    "skinsOffset": [
+      '300'
+    ]
+  },
 }
