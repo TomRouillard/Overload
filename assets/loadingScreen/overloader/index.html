@@ -28,7 +28,7 @@
     window.onload = function() {
         var backgroundAudio=document.getElementById("musicplayer");
         backgroundAudio.src = currentDir + "sounds/ambient/ChmpSlct_Tutorial.mp3"
-        backgroundAudio.volume=0.05;
+        backgroundAudio.volume=0.2;
     }
     var champs = [];
     function Team(color) {
@@ -38,7 +38,7 @@
 
     if (ENV == "TEST") {
         function getRandChampID() {
-            var key = String(Math.floor(Math.random() * 130) + 1);
+            var key = String(Math.floor(Math.random() * 600) + 1);
             if ( ! (key in champions) ) {
                 key = getRandChampID();
             }
@@ -202,8 +202,10 @@
     }
     Player.prototype.realPlayer = function(champ, skin, summoners, infos, iconId) {
         var self = this;
-
-        this.champion = champ in champions ? champions[champ].name: "champion not found";
+        if (!( champ in champions)) {
+            champions[champ] =  {name:'champion not found', key:'404', skinsOffset: ['180']}
+        }
+        this.champion = champions[champ].name;
         this.championId = champ;
         this.summoners = typeof summoners !== 'undefined' ? summoners : ['' , ''];
         this.summonerD = $('<img src="../commons/images/summonerspells/' + (this.summoners[1] in spells ? spells[this.summoners[1]].name : "notfound") + '.png" class="summonerD '+ (this.summoners[1] in spells ? spells[this.summoners[1]].name : "notfound")  + '">');
@@ -230,7 +232,8 @@
         this.additionalInfos = $('<div class="additionalInfos">'+
             (infos.winrate ? '<label>winrate</label><div class="winrate">'+ infos.winrate +'%</div>' : '<label>Not ranked</label>')+
             (infos.games ?'<div class="games">'+ infos.games +' games <br> played with ' + self.champion + '</div>':'')+ '</div>');
-        self.champVideo = $('<video class="champVideo" poster="'+ getSynchronizedVariant("imageDirectory") +('key' in champions[champ] ? champions[champ].key : champions[champ].name.replace(" ", "").replace("'", "").replace(".", "")) +'_Splash_0.jpg" src="../commons/video/'+this.champion.replace(" ", "").replace(".", "").replace("'", "")+'.webm" loop autoplay></video>');
+        var poster = (champions[champ].key == "404" ? '../commons/images/notfound.png' : getSynchronizedVariant("imageDirectory") +('key' in champions[champ] ? champions[champ].key : champions[champ].name.replace(" ", "").replace("'", "").replace(".", "")) +'_Splash_0.jpg');
+        self.champVideo = $('<video class="champVideo" poster="'+ poster +'" src="../commons/video/'+this.champion.replace(" ", "").replace(".", "").replace("'", "")+'.webm" loop autoplay></video>');
         self.champVideo.appendTo(self.championHTML);
         self.champVideo.animate({
             opacity: 1,
@@ -351,7 +354,7 @@
                 infosShown = true;
                 var backgroundAudio=document.getElementById("infoSound");
                 backgroundAudio.src = currentDir + "sounds/button_hover.mp3"
-                backgroundAudio.volume=0.003;
+                backgroundAudio.volume=0.1;
                 backgroundAudio.play();
             }
 
