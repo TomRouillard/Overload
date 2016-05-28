@@ -25,7 +25,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '400'
+     '410'
    ]
  },
  "150": {
@@ -80,7 +80,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '400'
    ]
  },
  "421": {
@@ -89,7 +89,7 @@ window.champions ={
      "support"
    ],
    "skinsOffset": [
-     '300'
+     '260'
    ]
  },
  "429": {
@@ -152,7 +152,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '370'
+      '400'
     ]
   },
   "126": {
@@ -179,7 +179,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '370'
+      '400'
     ]
   },
   "127": {
@@ -197,7 +197,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '380'
+      '390'
     ]
   },
   "122": {
@@ -206,7 +206,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '280'
+      '240'
     ]
   },
   "120": {
@@ -233,7 +233,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '350'
     ]
   },
   "134": {
@@ -242,7 +242,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '300'
+      '414'
     ]
   },
   "133": {
@@ -269,7 +269,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '360'
+      '415'
     ]
   },
   "60": {
@@ -278,7 +278,7 @@ window.champions ={
       "support"
     ],
     "skinsOffset": [
-      '380'
+      '400'
     ]
   },
   "131": {
@@ -314,6 +314,15 @@ window.champions ={
     ],
     "skinsOffset": [
       '260'
+    ]
+  },
+  "202" :{
+    "name" : "Jhin",
+    "roles" : [ "mid",
+      "top"
+    ],
+    "skinsOffset": [
+      '300'
     ]
   },
   "12" :{
@@ -359,7 +368,7 @@ window.champions ={
     "roles" : [ "marksmen"
       ],
     "skinsOffset": [
-      '350'
+      '360'
     ]
   },
   "53" :{
@@ -637,7 +646,7 @@ window.champions ={
     "roles" : [ "support"
       ],
     "skinsOffset": [
-      '390'
+      '420'
     ]
   },
   "99" :{
@@ -663,7 +672,7 @@ window.champions ={
     "roles" : [ "mid"
       ],
     "skinsOffset": [
-      '360'
+      '320'
     ]
   },
   "57" :{
@@ -847,7 +856,7 @@ window.champions ={
       "top"
       ],
     "skinsOffset": [
-      '237'
+      '400'
     ]
   },
   "98" :{
@@ -865,7 +874,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '360'
+      '380'
     ]
   },
   "27" :{
@@ -925,7 +934,7 @@ window.champions ={
         "top"
       ],
     "skinsOffset": [
-      '390'
+      '370'
     ]
   },
   "91" :{
@@ -1104,7 +1113,7 @@ window.champions ={
         "mid"
     ],
     "skinsOffset": [
-      '280'
+      '260'
     ]
   },
   "223" :{
@@ -1140,7 +1149,7 @@ window.champions ={
         "mid"
     ],
     "skinsOffset": [
-      '300'
+      '390'
     ]
   },
 }
