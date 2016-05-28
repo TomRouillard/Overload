@@ -9,6 +9,9 @@
     <audio autoplay loop id="musicplayer">
       <source src="" type="audio/mp3">
     </audio>
+    <audio id="infoSound">
+        <source src="" type="audio/mp3">
+    </audio>
         <ul class="team" id="red">
 
         </ul>
@@ -25,13 +28,14 @@
     window.onload = function() {
         var backgroundAudio=document.getElementById("musicplayer");
         backgroundAudio.src = currentDir + "sounds/ambient/ChmpSlct_Tutorial.mp3"
-        backgroundAudio.volume=0.2;
+        backgroundAudio.volume=0.05;
     }
     var champs = [];
     function Team(color) {
         this.color = color;
         this.players = [];
     }
+
     if (ENV == "TEST") {
         function getRandChampID() {
             var key = String(Math.floor(Math.random() * 130) + 1);
@@ -47,17 +51,36 @@
             }
             return key;
         }
+        function getRandInfos() {
+            var leagues  = ['unranked', 'bronze', 'silver', 'gold', 'platinum', 'diamond', 'master', 'challenger' ];
+            var rand = parseInt(Math.random() * leagues.length);
+            var divisionRand = parseInt(Math.random() * 4 + 1) ;
+            var divisions = ['i', 'ii', 'iii', 'iv', 'v']
+            var division = rand > 0 && rand < 6  ? divisions[divisionRand] : '' ;
+            var infos = {
+                tier : leagues[rand],
+                entries : [
+                    {
+                        division: division,
+                        losses: parseInt(Math.random() * 1000),
+                        wins: parseInt(Math.random() * 1000)
+                    }
+                ]
+            };
+            console.log(infos);
+            return infos;
+        }
         var respTest = {"gameId":2098462209,"mapId":11,"gameMode":"CLASSIC","gameType":"MATCHED_GAME","gameQueueConfigId":4,"participants":[
-        {"teamId":100,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Sidesprang","bot":false,"summonerId":22338565},
-        {"teamId":100,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"KingWorsa","bot":false,"summonerId":34857282},
-        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Enton","bot":false,"summonerId":39484945},
-        {"teamId":100,"spell1Id":12,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Bones to Papayas","bot":false,"summonerId":43672112},
-        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Wild Porygon","bot":false,"summonerId":41527558},
-        {"teamId":200,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"The Wang Carry","bot":false,"summonerId":24560332},
-        {"teamId":200,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Fungar","bot":false,"summonerId":25595670},
-        {"teamId":200,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"yung baloo","bot":false,"summonerId":22025113},
-        {"teamId":200,"spell1Id":4,"spell2Id":3,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"Alamolo","bot":false,"summonerId":19402186},
-        {"teamId":200,"spell1Id":4,"spell2Id":12,"championId": getRandChampID(),"profileIconId":getRandIconID(),"summonerName":"DG Basko","bot":false,"summonerId":22385395}]}
+        {"teamId":100,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(), "infos": getRandInfos(), "summonerName":"Sidesprang","bot":false,"summonerId":22338565},
+        {"teamId":100,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"KingWorsa","bot":false,"summonerId":34857282},
+        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Enton","bot":false,"summonerId":39484945},
+        {"teamId":100,"spell1Id":12,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Bones to Papayas","bot":false,"summonerId":43672112},
+        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Wild Porygon","bot":false,"summonerId":41527558},
+        {"teamId":200,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"The Wang Carry","bot":false,"summonerId":24560332},
+        {"teamId":200,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Fungar","bot":false,"summonerId":25595670},
+        {"teamId":200,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"yung baloo","bot":false,"summonerId":22025113},
+        {"teamId":200,"spell1Id":4,"spell2Id":3,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Alamolo","bot":false,"summonerId":19402186},
+        {"teamId":200,"spell1Id":4,"spell2Id":12,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"DG Basko","bot":false,"summonerId":22385395}]}
             // var champions = ['Nami', 'Draven', 'Forecast_Janna', 'Pulsefire_Ezreal', 'Aatrox']
 
         getSynchronizedVariant = function(variable) {
@@ -160,6 +183,23 @@
         this.listElement.appendTo($('#'+this.team));
     }
 
+    var l2t = {
+        "unranked": "Unranked",
+        "bronze": "Bronze",
+        "silver": "Silver",
+        "gold": "Gold",
+        "platinum": "Platinum",
+        "diamond": "Diamond",
+        "master": "Master",
+        "challenger": "Challenger",
+    };
+    var d2t = {
+        "i": "1",
+        "ii": "2",
+        "iii": "3",
+        "iv": "4",
+        "v": "5"
+    }
     Player.prototype.realPlayer = function(champ, skin, summoners, infos, iconId) {
         var self = this;
 
@@ -182,13 +222,14 @@
         this.maskLoadingbar = $('<div class="maskLoadingbar"></div>');
         this.footer = $('<div class="playerFooter"></div>');
         this.hiddenInfo = $('<div class="playerInfo"></div>');
+        var divisionText = infos.division && infos.division != 'unranked' && infos.division != 'master' && infos.division != 'challenger' ? (l2t[infos.division.split('_')[0]] + ' ' + d2t[infos.division.split('_')[1]]) : l2t[infos.division];
         this.division = $('<div class="division">'+
-            '<div class="divisionText">'+ infos.division +'</div>'+
+            '<div class="divisionText">'+ divisionText +'</div>'+
             '<img src="../commons/images/leagues/' + (infos.division ? infos.division : 'unranked') +'.png">'+
             '</div>');
         this.additionalInfos = $('<div class="additionalInfos">'+
             (infos.winrate ? '<label>winrate</label><div class="winrate">'+ infos.winrate +'%</div>' : '<label>Not ranked</label>')+
-            (infos.games ?'<div class="games">over '+ infos.games +' games <br> played with ' + self.champion + '</div>':'')+ '</div>');
+            (infos.games ?'<div class="games">'+ infos.games +' games <br> played with ' + self.champion + '</div>':'')+ '</div>');
         self.champVideo = $('<video class="champVideo" poster="'+ getSynchronizedVariant("imageDirectory") +('key' in champions[champ] ? champions[champ].key : champions[champ].name.replace(" ", "").replace("'", "").replace(".", "")) +'_Splash_0.jpg" src="../commons/video/'+this.champion.replace(" ", "").replace(".", "").replace("'", "")+'.webm" loop autoplay></video>');
         self.champVideo.appendTo(self.championHTML);
         self.champVideo.animate({
@@ -211,14 +252,6 @@
         self.additionalInfos.appendTo(self.hiddenInfo);
         self.hiddenInfo.appendTo(self.championHTML);
         self.loadingbar.appendTo(self.maskLoadingbar);
-        self.container.mousemove(function() {
-            self.hiddenInfo.show();
-            self.footer.hide();
-        })
-        self.container.mouseout(function() {
-            self.hiddenInfo.hide();
-            self.footer.show();
-        })
 
     }
     Player.prototype.definePercent = function(value) {
@@ -276,10 +309,11 @@
                 var indexP = {red: 0, blue: 0};
                 for (var i = data.participants.length - 1; i >= 0; i--) {
                     var participant = data.participants[i];
+                    console.log(participant)
                     var color = participant.teamId == 100 ? "blue" : "red";
                     var infos =  {
                         name: participant.summonerName,
-                        division:  !checkEmpty(participant.infos) ? participant.infos.tier.toLowerCase() +'_'+ participant.infos.entries[0].division.toLowerCase() : '',
+                        division:  !checkEmpty(participant.infos) ? participant.infos.tier.toLowerCase() + (participant.infos.entries[0].division != "" ? '_'+ participant.infos.entries[0].division.toLowerCase() : '') : '',
                         winrate:   !checkEmpty(participant.infos) ? parseInt(100 * ((participant.infos.entries[0].wins) / (participant.infos.entries[0].losses + participant.infos.entries[0].wins))): '',
                         games:     !checkEmpty(participant.infos) ? parseInt(participant.infos.entries[0].wins) + parseInt(participant.infos.entries[0].losses): ''
                     }
@@ -304,10 +338,22 @@
     }
 
 
+
+    var infosShown = false;
     $('body').keydown(function(e) {
         var keyCode = e.keyCode || e.which;
-        if (keyCode == 9) {
+        if (keyCode == 9 ) {
+
             e.preventDefault();
+
+            if (! infosShown) {
+                infosShown = true;
+                var backgroundAudio=document.getElementById("infoSound");
+                backgroundAudio.src = currentDir + "sounds/button_hover.mp3"
+                backgroundAudio.volume=0.003;
+                backgroundAudio.play();
+            }
+
             for (var i = players['red'].length - 1; i >= 0; i--) {
                 players['red'][i].hiddenInfo.show();
                 players['red'][i].footer.hide();
@@ -319,6 +365,7 @@
     $('body').keyup(function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode == 9) {
+            infosShown = false;
             e.preventDefault();
             for (var i = players['red'].length - 1; i >= 0; i--) {
                 players['red'][i].hiddenInfo.hide();

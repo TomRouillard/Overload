@@ -4,7 +4,7 @@ html {
 }
 body{
     overflow: hidden;
-    /*background: linear-gradient(#690E0E, #0E2376); */
+    background: linear-gradient(#690E0E, #0E2376);
     background: black;
     font-family: arial,sans-serif;
     background-image: url("../images/wallpeper.jpg");
@@ -39,12 +39,12 @@ body{
     /*max-width: 300px;*/
     margin-right: 15px;
 }
-.player:hover .playerFooter {
+/*.player:hover .playerFooter {
     display: none;
 }
 .player:hover .playerInfo {
     display: block;
-}
+}*/
 .champion {
     height: 100%;
     position: relative;
@@ -79,7 +79,7 @@ body{
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     margin-left: 5%;
-    font-size: 20px;
+    font-size: 14px;
     margin-top: 40px;
     color: white;
     text-align: center;
@@ -88,10 +88,10 @@ body{
     font-size: 12px
 }
 .divisionText{
-    background: #E95858 ;
+    background: rgba(233, 88, 88, 0.6) ;
 }
 #blue .divisionText{
-    background: #5E5EE8;
+    background: rgba(94, 94, 232, 0.6);
 }
 .division{
    -webkit-animation: slidedown;
@@ -112,7 +112,7 @@ body{
     display: none;
     width: 100%;
     height: 100%;
-    background:rgba(11,11,11,0.8);
+    background:rgba(24, 14, 29, 0.63);
    -webkit-animation: fadeIn;
     -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
@@ -283,7 +283,7 @@ ul {
     position:absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 45%, rgba(0, 0, 0, 0.95) 90%, rgba(0, 0, 0, 1) 100%)
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 74%, rgba(0, 0, 0, 0.95) 90%, rgba(0, 0, 0, 1) 100%)
 }
 
 .gold {
@@ -297,7 +297,7 @@ ul {
 }
 .playerFooter{
     position: relative;
-    bottom: 27%;
+    bottom: 21%;
     height: 20%;
     width: 100%;
     z-index: 3;
@@ -307,7 +307,7 @@ ul {
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-play-state: running;
     /*z-index: 10;*/
-    margin-left: 4%;
+    margin-left: 5%;
 }
 
 .championName {
