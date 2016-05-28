@@ -28,7 +28,7 @@ sf::Image WindowHandle::captureCurrentWindowImage()
 	WINDOWPLACEMENT wp = { 0 };
 	wp.length = sizeof(WINDOWPLACEMENT);
 	GetWindowPlacement(_currentHandle, &wp);
-
+	
 	ShowWindow(_currentHandle, SW_SHOWNOACTIVATE);
 
 	return utils::WindowUtils::captureImageFromWindow(_currentHandle);

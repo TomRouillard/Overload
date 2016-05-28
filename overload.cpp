@@ -40,7 +40,7 @@ std::string Overload::retrieveCurrentGameInfo()
 {
 	UserInfo currentUser = retrieveCurrentUser();
 	UserInfo fooUser;
-	fooUser._id = 43699021;
+	fooUser._id = 19370132;
 	return _serverManager.retrieveGameInfo(fooUser._id);
 }
 

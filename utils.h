@@ -229,7 +229,6 @@ namespace utils
 				{
 					if (processName == getProcessName(aProcesses[i]))
 					{
-						LOG(INFO) << "Process" << processName << "found.";
 						processFound = true;
 					}
 				}
@@ -261,6 +260,18 @@ namespace utils
 			CloseHandle(hProcess);
 
 			return utils::StringUtils::wStringToString(szProcessName);
+		}
+	};
+
+	class SFMLUtils
+	{
+	public:
+		static bool isColorNear(sf::Color a, sf::Color b, int offset)
+		{
+			return a.r <= b.r + offset && a.r >= b.r - offset
+				&& a.g <= b.g + offset && a.g >= b.g - offset
+				&& a.b <= b.b + offset && a.b >= b.b - offset
+				&& a.a <= b.a + offset && a.a >= b.a - offset;
 		}
 	};
 

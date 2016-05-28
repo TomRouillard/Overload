@@ -33,13 +33,15 @@ void Daemon::lookForProcess()
 			if (processStarted && !_gameRunning)
 			{
 				// game started
+				LOG(INFO) << "Game started.";
 				startLoadingScreen();
 				_gameRunning = true;
 			}
 			if (!processStarted && _gameRunning)
 			{
-				_gameRunning = false;
 				// game ended
+				LOG(INFO) << "Game ended.";
+				_gameRunning = false;
 			}
 		}
 		else

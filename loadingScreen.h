@@ -30,5 +30,6 @@ private:
 	sf::RenderWindow _loadingWindow;
 	WindowHandle _lolWindowHandle;
 	std::thread _pixelValueThread;
+	bool _loadingInProgress;
 };
 
