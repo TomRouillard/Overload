@@ -18,16 +18,16 @@
 
        <ul class="team" id="blue">
         </ul>
+<script src="../commons/js/locales.js"></script>
 <script src="../commons/js/jquery-2.1.1.min.js"></script>
 <script src="../commons/js/champions.js"></script>
 <script src="../commons/js/summonerspells.js"></script>
 <script src="../commons/js/summonerIcons.js"></script>
+<script src="../commons/js/localTest.js"></script>
 <script type="text/javascript">
-    var ENV = "TEST";
-    var currentDir = "C:/Riot Games/League of Legends/RADS/projects/lol_air_client/releases/0.0.1.201/deploy/assets/";
     window.onload = function() {
         var backgroundAudio=document.getElementById("musicplayer");
-        backgroundAudio.src = currentDir + "sounds/ambient/ChmpSlct_Tutorial.mp3"
+        backgroundAudio.src = window.currentDir + "sounds/ambient/ChmpSlct_Tutorial.mp3"
         backgroundAudio.volume=0.2;
     }
     var champs = [];
@@ -36,62 +36,7 @@
         this.players = [];
     }
 
-    if (ENV == "TEST") {
-        function getRandChampID() {
-            var key = String(Math.floor(Math.random() * 600) + 1);
-            if ( ! (key in champions) ) {
-                key = getRandChampID();
-            }
-            return key;
-        }
-        function getRandIconID() {
-            var key = String(Math.floor(Math.random() * 800) + 1);
-            if ( ! (key in summonerIcons) ) {
-                key = getRandIconID();
-            }
-            return key;
-        }
-        function getRandInfos() {
-            var leagues  = ['unranked', 'bronze', 'silver', 'gold', 'platinum', 'diamond', 'master', 'challenger' ];
-            var rand = parseInt(Math.random() * leagues.length);
-            var divisionRand = parseInt(Math.random() * 4 + 1) ;
-            var divisions = ['i', 'ii', 'iii', 'iv', 'v']
-            var division = rand > 0 && rand < 6  ? divisions[divisionRand] : '' ;
-            var infos = {
-                tier : leagues[rand],
-                entries : [
-                    {
-                        division: division,
-                        losses: parseInt(Math.random() * 1000),
-                        wins: parseInt(Math.random() * 1000)
-                    }
-                ]
-            };
-            console.log(infos);
-            return infos;
-        }
-        var respTest = {"gameId":2098462209,"mapId":11,"gameMode":"CLASSIC","gameType":"MATCHED_GAME","gameQueueConfigId":4,"participants":[
-        {"teamId":100,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(), "infos": getRandInfos(), "summonerName":"Sidesprang","bot":false,"summonerId":22338565},
-        {"teamId":100,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"KingWorsa","bot":false,"summonerId":34857282},
-        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Enton","bot":false,"summonerId":39484945},
-        {"teamId":100,"spell1Id":12,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Bones to Papayas","bot":false,"summonerId":43672112},
-        {"teamId":100,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Wild Porygon","bot":false,"summonerId":41527558},
-        {"teamId":200,"spell1Id":4,"spell2Id":11,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"The Wang Carry","bot":false,"summonerId":24560332},
-        {"teamId":200,"spell1Id":7,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Fungar","bot":false,"summonerId":25595670},
-        {"teamId":200,"spell1Id":14,"spell2Id":4,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"yung baloo","bot":false,"summonerId":22025113},
-        {"teamId":200,"spell1Id":4,"spell2Id":3,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"Alamolo","bot":false,"summonerId":19402186},
-        {"teamId":200,"spell1Id":4,"spell2Id":12,"championId": getRandChampID(),"profileIconId":getRandIconID(),"infos": getRandInfos(), "summonerName":"DG Basko","bot":false,"summonerId":22385395}]}
-            // var champions = ['Nami', 'Draven', 'Forecast_Janna', 'Pulsefire_Ezreal', 'Aatrox']
 
-        getSynchronizedVariant = function(variable) {
-            var result = {
-                "imageDirectory": currentDir + "images/champions/",
-                "gameInfo": JSON.stringify(respTest)
-            };
-
-            return result[variable];
-        }
-    }
 
     Team.prototype.addPlayer = function(player) {
         this.players.push(player);
@@ -233,12 +178,14 @@
             (infos.winrate ? '<label>winrate</label><div class="winrate">'+ infos.winrate +'%</div>' : '<label>Not ranked</label>')+
             (infos.games ?'<div class="games">'+ infos.games +' games <br> played with ' + self.champion + '</div>':'')+ '</div>');
         var poster = (champions[champ].key == "404" ? '../commons/images/notfound.png' : getSynchronizedVariant("imageDirectory") +('key' in champions[champ] ? champions[champ].key : champions[champ].name.replace(" ", "").replace("'", "").replace(".", "")) +'_Splash_0.jpg');
-        self.champVideo = $('<video class="champVideo" poster="'+ poster +'" src="../commons/video/'+this.champion.replace(" ", "").replace(".", "").replace("'", "")+'.webm" loop autoplay></video>');
+        self.champVideo = $('<video class="champVideo" poster="'+ poster +'" src="../commons/video/'+this.champion.replace(" ", "").replace(".", "").replace("'", "")+'.mp4" loop autoplay></video>');
         self.champVideo.appendTo(self.championHTML);
+        self.offset = champ in champions ? champions[champ].skinsOffset[this.skin] : 0
         self.champVideo.animate({
             opacity: 1,
-            left: "-=" + (champ in champions ? champions[champ].skinsOffset[this.skin] : 0)
-        }, 3000);
+            left: "-=" + self.offset
+        }, 4000);
+
 
         this.playerMask.appendTo(this.championHTML);
         this.blinkMask.appendTo(this.championHTML);
@@ -326,7 +273,7 @@
                         infos,
                         participant.profileIconId
                     );
-                    players[color][indexP[color]].definePercent(100);
+                    // players[color][indexP[color]].definePercent(100);
                     indexP[color]++;
                 }
 
@@ -343,34 +290,41 @@
 
 
 
+    var backgroundAudio=document.getElementById("infoSound");
+    backgroundAudio.src = window.currentDir + "sounds/button_hover.mp3"
     var infosShown = false;
+    var keyup = true;
     $('body').keydown(function(e) {
         var keyCode = e.keyCode || e.which;
-        if (keyCode == 9 ) {
-
+        if (keyCode == 9 && keyup) {
+            keyup = false;
             e.preventDefault();
+            toggleInfos(infosShown);
 
-            if (! infosShown) {
-                infosShown = true;
-                var backgroundAudio=document.getElementById("infoSound");
-                backgroundAudio.src = currentDir + "sounds/button_hover.mp3"
-                backgroundAudio.volume=0.1;
-                backgroundAudio.play();
-            }
-
+        }
+    });
+    $('body').keyup(function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == 9) {
+            keyup = true;
+            console.log(keyup)
+            e.preventDefault();
+            // toggleInfos();
+        }
+    });
+    function toggleInfos(show) {
+        if (! show) {
+            infosShown = true;
+            backgroundAudio.volume=0.1;
+            backgroundAudio.play();
             for (var i = players['red'].length - 1; i >= 0; i--) {
                 players['red'][i].hiddenInfo.show();
                 players['red'][i].footer.hide();
                 players['blue'][i].hiddenInfo.show();
                 players['blue'][i].footer.hide();
             };
-        }
-    });
-    $('body').keyup(function(e) {
-        var keyCode = e.keyCode || e.which;
-        if (keyCode == 9) {
+        } else {
             infosShown = false;
-            e.preventDefault();
             for (var i = players['red'].length - 1; i >= 0; i--) {
                 players['red'][i].hiddenInfo.hide();
                 players['red'][i].footer.show();
@@ -378,7 +332,7 @@
                 players['blue'][i].footer.show();
             };
         }
-    });
+    }
 </script>
     </body>
 </html>

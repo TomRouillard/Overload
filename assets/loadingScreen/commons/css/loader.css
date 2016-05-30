@@ -45,6 +45,9 @@ body{
 .player:hover .playerInfo {
     display: block;
 }*/
+/*.player:hover .playerMask {
+    background-image: linear-gradient(to bottom, rgba(60,80,245,0.3) 0%, rgba(60,80,245,0.6) 74%, rgba(0, 0, 40, 0.95) 90%, rgba(0, 0, 40, 1) 100%);
+}*/
 .champion {
     height: 100%;
     position: relative;
@@ -201,11 +204,13 @@ ul {
     padding: none;
 }
 .summoners {
+    vertical-align: middle;
     padding-left: 5%;
 }
 
 .summonerD{
     display: inline-block;
+    vertical-align: middle;
     width: 37px;
     -webkit-animation: slideleft;
     -webkit-animation-duration: 0.1s;
@@ -218,6 +223,7 @@ ul {
 
 .summonerF{
     display: inline-block;
+    vertical-align: middle;
     width: 37px;
     -webkit-animation: slideleft;
     -webkit-animation-duration: 0.1s;
@@ -373,6 +379,7 @@ ul {
     width: 25%;
     height: 80%;
     max-width: 70px;
+    vertical-align: middle;
     max-height: 70px;
     margin-left: 0%;    background-image: url("../images/profileicons/profileicon0.png");
     height:46px;
@@ -382,11 +389,11 @@ ul {
 .percent{
     display: inline-block;
     font-size: 17px;
-    color: white;
-    text-align: center;
+    color: #B0B0B0;
+    position: absolute;
+    right: 24px;
+    top: 66px;
     vertical-align: middle;
-    margin-left: 14%;
-    margin-bottom: 40px;
     -webkit-animation: slideright;
     -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: ease-in-out;
